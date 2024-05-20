@@ -21,7 +21,7 @@ const SideMenu = () => {
   };
   // ========================================================
   return (
-    <div className="flex flex-col w-[15%] h-full p-2 md:p-5 max-md:items-center rounded-3xl border-2 border-black dark:border-white">
+    <div className="flex flex-col w-[15%] h-full p-2 md:p-5 max-md:items-center rounded-2xl shadow-sh">
       <a href="/" className="flex gap-2 items-center">
         <Gamepad2 className="relative inline-flex w-10 h-10 md:w-14 md:h-14" />
         <span className="md:text-[1rem] lg:text-[1.5rem] xl:text-[2rem] max-md:hidden">

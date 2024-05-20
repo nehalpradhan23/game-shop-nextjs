@@ -1,11 +1,10 @@
 import Header from "@/components/header";
-import SideMenu from "@/components/sidebar/sideMenu";
 import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="dark:bg-slate-950 flex h-screen p-2 md:p-6">
-      <SideMenu />
+    <div className="w-full rounded-2xl ml-3 md:ml-9 shadow-sh2">
+      <Header />
       {children}
     </div>
   );
