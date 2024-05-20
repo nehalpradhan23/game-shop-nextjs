@@ -1,12 +1,23 @@
 "use client";
-import navListData from "@/app/data/navListData";
+import navListData from "@/data/navListData";
 import { Gamepad2 } from "lucide-react";
 import NavListItem from "./navListItem";
 import DarkModeToggle from "./dark-mode-toggle";
+import { useState } from "react";
 
 const SideMenu = () => {
-  const handleNavOnClick = (_id: number, target: string) => {
-    console.log(target, _id);
+  const [navData, setNavData] = useState(navListData);
+  // =======================================
+  const handleNavOnClick = (id: number, target: string) => {
+    // console.log(target, _id);
+    const newNavData = navData.map((item) => {
+      item.active = false;
+      if (item._id === id) {
+        item.active = true;
+      }
+      return item;
+    });
+    setNavData(newNavData);
   };
   // ========================================================
   return (

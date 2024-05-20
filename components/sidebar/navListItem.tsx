@@ -1,5 +1,5 @@
 "use client";
-import { navListType } from "@/app/data/navListData";
+import { navListType } from "@/data/navListData";
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -12,13 +12,13 @@ const NavListItem = ({ item, navOnClick }: navProps) => {
   return (
     <div
       className={cn(
-        "flex max-lg:flex-col gap-3 lg:items-center hover:bg-purple-700 p-2 rounded-md transition-all hover:text-white cursor-pointer",
-        item.active ? "bg-purple-700" : ""
+        "flex gap-3 max-lg:items-center  hover:bg-purple-700 p-2 rounded-md transition-all hover:text-white cursor-pointer",
+        item.active ? "bg-purple-700 text-white" : ""
       )}
       onClick={() => navOnClick(item._id, item.target)}
     >
-      <item.icon className="" />
-      <span className="lg:text-[1rem] xl:text-[1.5rem] max-md:hidden">
+      <item.icon className="max-lg:w-full" />
+      <span className="lg:text-[0.7rem] xl:text-[1rem] max-lg:hidden">
         {item.name}
       </span>
     </div>
