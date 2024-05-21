@@ -115,6 +115,24 @@ body {
   padding-bottom: 30px;
 }
 
+@media screen and (max-width: 768px) {
+  .swiper {
+    width: 90%;
+  }
+  .gameSlider {
+    /* position: relative; */
+    /* background-color: red; */
+    /* width: 50%; */
+  }
+  .swiper-slide-img {
+    position: absolute;
+    background-color: red;
+    /* width: 80%;
+    height: 80%; */
+    border-radius: 60px;
+  }
+}
+
 .swiper-slide {
   width: 550px;
   /* height: 200px; */

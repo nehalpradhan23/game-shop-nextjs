@@ -17,6 +17,7 @@ const FilterAndSearch = ({
       <div className="flex gap-2 flex-wrap">
         {data.map((item) => (
           <span
+            key={item._id}
             className={cn(
               "px-3 py-2 rounded-md hover:bg-purple-700 cursor-pointer",
               item.active ? "bg-purple-700" : ""

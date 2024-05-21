@@ -1,8 +1,11 @@
+"use client";
 import GameCard from "@/components/card/gameCard";
+import { UserContext } from "@/components/context/userContext";
 import HomeCarousel from "@/components/home/homeCarousel";
-import { gamesData } from "@/data/gamesData";
+import { useContext } from "react";
 
 export default function Page() {
+  const { games } = useContext(UserContext);
   // =========================================
   return (
     <div className="section no-scrollbar">
@@ -11,8 +14,8 @@ export default function Page() {
         <p className="text-3xl font-bold mt-6">Explore</p>
 
         <div className="flex justify-between flex-wrap">
-          {gamesData.slice(0, 4).map((item) => (
-            <GameCard game={item} />
+          {games.slice(0, 4).map((item) => (
+            <GameCard game={item} key={item._id} />
           ))}
         </div>
       </div>

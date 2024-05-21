@@ -33,17 +33,17 @@ export default function HomeCarousel() {
       className="gameSwiper"
     >
       {gamesData.map((item) => (
-        <SwiperSlide>
+        <SwiperSlide key={item._id}>
           <div className="gameSlider flex items-center justify-center">
             <Image
               src={item.img}
               // className="swiper-slide-img h-[300px] object-cover items-center justify-center"
-              className="h-[300px] object-cover rounded-2xl"
+              className="h-[200px] md:h-[300px] object-cover rounded-2xl"
               alt="img"
               width={500}
               height={500}
             />
-            <div className="absolute bottom-10 max-md:items-center md:left-[25%] text-4xl text-white font-bold z-30 p-2 bg-black/70">
+            <div className="absolute bottom-10 max-md:items-center md:left-[25%] text-2xl md:text-4xl text-white font-bold z-30 p-2 bg-black/70">
               {item.title}
             </div>
           </div>

@@ -1,15 +1,32 @@
 "use client";
-import { createContext, useState } from "react";
+import { gameProps, gamesData } from "@/data/gamesData";
+import { Dispatch, SetStateAction, createContext, useState } from "react";
 
-const UserContext = createContext("");
+export type ContextProps = {
+  library: gameProps[];
+  setLibrary: Dispatch<SetStateAction<gameProps[]>>;
+  bag: gameProps[];
+  setBag: Dispatch<SetStateAction<gameProps[]>>;
+  games: gameProps[];
+  setGames: Dispatch<SetStateAction<gameProps[]>>;
+};
+
+export const UserContext = createContext<ContextProps>({} as ContextProps);
 
 export const ContextProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [categoryData, setCategoryData] = useState();
-  const [filterListData, setFilterListData] = useState();
+  const [games, setGames] = useState(gamesData);
+  const [library, setLibrary] = useState<gameProps[]>([]);
+  const [bag, setBag] = useState<gameProps[]>([]);
   // =========================================
-  return <UserContext.Provider value="">{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider
+      value={{ library, setLibrary, bag, setBag, games, setGames }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
 };

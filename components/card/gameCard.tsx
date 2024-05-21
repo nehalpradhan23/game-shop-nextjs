@@ -2,6 +2,7 @@ import { gameProps } from "@/data/gamesData";
 import { Heart, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import GameCardButtons from "./gameCardButtons";
 
 const GameCard = ({ game }: { game: gameProps }) => {
   return (
@@ -21,12 +22,7 @@ const GameCard = ({ game }: { game: gameProps }) => {
         {/* <span>{game.discount}</span> */}
       </div>
       {/* buttons ===================== */}
-      <span className="absolute right-0 top-0 bg-slate-950 p-2 rounded-bl-lg hover:bg-purple-700 transition-all cursor-pointer">
-        <ShoppingBag />
-      </span>
-      <span className="absolute left-0 top-0 bg-slate-950 p-2 rounded-br-lg hover:bg-purple-700 transition-all cursor-pointer">
-        <Heart />
-      </span>
+      <GameCardButtons game={game} />
     </div>
   );
 };

@@ -1,16 +1,18 @@
 "use client";
 import GameCard from "@/components/card/gameCard";
 import FilterAndSearch from "@/components/categories/filterAndSearch";
+import { UserContext } from "@/components/context/userContext";
 import { filterListData } from "@/data/filterListData";
 import { gamesData } from "@/data/gamesData";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const page = () => {
-  const [games, setGames] = useState(gamesData); // filtered games
+  // const [games, setGames] = useState(gamesData); // filtered games
   const [filters, setFilters] = useState(filterListData);
+  const { games } = useContext(UserContext);
+  const [data, setData] = useState(games);
 
   const handleFilterGames = (category: string) => {
-    // console.log(item);
     // set active on filter ===================
     setFilters(
       filters.map((filter) => {
@@ -22,17 +24,26 @@ const page = () => {
       })
     );
     // filter data ========================
-    // console.log(category, "category");
-
-    // console.log("setting games data");
 
     if (category === "All") {
-      setGames(gamesData);
+      setData(gamesData);
       return;
     }
-    setGames(gamesData.filter((game) => game.category === category));
-    // console.log(games, "games");
+    setData(gamesData.filter((game) => game.category === category));
   };
+
+  useEffect(() => {
+    setFilters(
+      filters.map((filter) => {
+        if (filter.name === "All") {
+          filter.active = true;
+        } else {
+          filter.active = false;
+        }
+        return filter;
+      })
+    );
+  }, []);
   // ===============================================
   return (
     <div className="section no-scrollbar">
@@ -40,8 +51,8 @@ const page = () => {
       <FilterAndSearch data={filters} onFilterClick={handleFilterGames} />
       {/* show filtered data ============ */}
       <div className="flex gap-5 flex-wrap p-4">
-        {games.map((item) => (
-          <GameCard game={item} />
+        {data.map((item) => (
+          <GameCard game={item} key={item._id} />
         ))}
       </div>
     </div>
