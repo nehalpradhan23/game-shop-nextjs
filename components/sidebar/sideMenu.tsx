@@ -4,9 +4,11 @@ import { Gamepad2 } from "lucide-react";
 import NavListItem from "./navListItem";
 import DarkModeToggle from "./dark-mode-toggle";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const SideMenu = () => {
   const [navData, setNavData] = useState(navListData);
+  const router = useRouter();
   // =======================================
   const handleNavOnClick = (id: number, target: string) => {
     // console.log(target, _id);
@@ -18,10 +20,16 @@ const SideMenu = () => {
       return item;
     });
     setNavData(newNavData);
+    // ====================================
+    if (target === "home") {
+      router.push("/");
+    } else {
+      router.push(target);
+    }
   };
   // ========================================================
   return (
-    <div className="flex flex-col w-[15%] h-full p-2 md:p-5 max-md:items-center rounded-2xl shadow-sh">
+    <div className="flex flex-col w-[15%] h-full p-2 md:p-5  max-md:items-center rounded-2xl shadow-sh">
       <a href="/" className="flex gap-2 items-center">
         <Gamepad2 className="relative inline-flex w-10 h-10 md:w-14 md:h-14" />
         <span className="md:text-[1rem] lg:text-[1.5rem] xl:text-[2rem] max-md:hidden">

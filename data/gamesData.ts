@@ -1,4 +1,17 @@
-export const gamesData = [
+export interface gameProps {
+  _id: number;
+  title: string;
+  description: string;
+  level: string;
+  category: string;
+  rating: number;
+  discount: number;
+  price: number;
+  img: string;
+  trailer: string;
+  active: boolean;
+}
+export const gamesData: gameProps[] = [
   {
     _id: 1,
     title: "League of Legends",
@@ -9,7 +22,7 @@ export const gamesData = [
     rating: 3,
     discount: 0.5,
     price: 79.0,
-    img: "./assets/games/lol-bg.jpeg",
+    img: "/assets/games/lol-bg.jpeg",
     trailer: "https://www.youtube.com/embed/vzHrjOMfHPY",
     active: true,
   },
@@ -23,7 +36,7 @@ export const gamesData = [
     rating: 3,
     discount: 0.3,
     price: 52.56,
-    img: "./assets/games/mario-bg.jpeg",
+    img: "/assets/games/mario-bg.jpeg",
     trailer: "https://www.youtube.com/embed/tKlRN2YpxRE",
     active: false,
   },
@@ -38,7 +51,7 @@ export const gamesData = [
     rating: 4,
     discount: 0.5,
     price: 85.0,
-    img: "./assets/games/dota-2-bg.jpg",
+    img: "/assets/games/dota-2-bg.jpg",
     trailer: "https://www.youtube.com/embed/-cSFPIwMEq4",
     active: false,
   },
@@ -52,7 +65,7 @@ export const gamesData = [
     rating: 3,
     discount: 0.2,
     price: 65.6,
-    img: "./assets/games/king-of-fighters-xv.jpeg",
+    img: "/assets/games/king-of-fighters-xv.jpeg",
     trailer: "https://www.youtube.com/embed/_o7Ip64-Sio",
     active: false,
   },
@@ -67,7 +80,7 @@ export const gamesData = [
     rating: 4,
     discount: 0,
     price: 129.0,
-    img: "./assets/games/forza-horizon-5-bg.jpeg",
+    img: "/assets/games/forza-horizon-5-bg.jpeg",
     trailer: "https://www.youtube.com/embed/FYH9n37B7Yw",
     active: false,
   },
@@ -81,7 +94,7 @@ export const gamesData = [
     rating: 4,
     discount: 0,
     price: 85.8,
-    img: "./assets/games/halo-infinite-bg.jpeg",
+    img: "/assets/games/halo-infinite-bg.jpeg",
     trailer: "https://www.youtube.com/embed/PyMlV5_HRWk",
     active: false,
   },
@@ -95,7 +108,7 @@ export const gamesData = [
     rating: 3,
     discount: 0.6,
     price: 69.0,
-    img: "./assets/games/fortnite-bg.jpeg",
+    img: "/assets/games/fortnite-bg.jpeg",
     trailer: "https://www.youtube.com/embed/7bq0Boq2B3Y",
     active: false,
   },
@@ -109,7 +122,7 @@ export const gamesData = [
     rating: 5,
     discount: 0.5,
     price: 99.0,
-    img: "./assets/games/diablo-3-bg.jpeg",
+    img: "/assets/games/diablo-3-bg.jpeg",
     trailer: "https://www.youtube.com/embed/M2TpNQhfkp4",
     active: false,
   },

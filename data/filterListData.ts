@@ -1,4 +1,10 @@
-const filterListData = [
+export type filterDataProps = {
+  _id: number;
+  name: string;
+  active: boolean;
+};
+
+export const filterListData: filterDataProps[] = [
   {
     _id: 1,
     name: "All",
@@ -30,5 +36,3 @@ const filterListData = [
     active: false,
   },
 ];
-
-export default filterListData;
