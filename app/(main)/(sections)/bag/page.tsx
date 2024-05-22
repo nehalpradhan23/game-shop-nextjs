@@ -45,7 +45,7 @@ const Bag = () => {
                   className="absolute right-4 bottom-4 cursor-pointer transition-all"
                   onClick={() => removeFromBag(item)}
                 >
-                  <span className="rounded-md bg-purple-700 hover:bg-red-500 px-3 py-2">
+                  <span className="rounded-md bg-purple-700 hover:bg-red-500 text-white px-3 py-2">
                     Remove from bag
                   </span>
                 </div>
