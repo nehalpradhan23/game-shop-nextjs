@@ -1,11 +1,10 @@
 "use client";
-import GameCard from "@/components/card/gameCard";
 import { UserContext } from "@/components/context/userContext";
 import { gameProps } from "@/data/gamesData";
 import Image from "next/image";
 import React, { useContext } from "react";
 
-const bag = () => {
+const Bag = () => {
   const { bag, setBag } = useContext(UserContext);
 
   const removeFromBag = (game: gameProps) => {
@@ -19,7 +18,10 @@ const bag = () => {
       ) : (
         <div className="flex gap-6 flex-wrap p-4">
           {bag.map((item) => (
-            <div className="flex max-md:flex-col rounded-md md:gap-3 shadow-sh w-full">
+            <div
+              key={item._id}
+              className="flex max-md:flex-col rounded-md md:gap-3 shadow-sh w-full"
+            >
               <div className="max-md:w-[100%] w-[30%] h-[150px] md:h-[200px] object-cover rounded-md overflow-hidden p-2">
                 <Image
                   src={item.img}
@@ -58,4 +60,4 @@ const bag = () => {
   );
 };
 
-export default bag;
+export default Bag;

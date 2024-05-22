@@ -4,7 +4,7 @@ import GameCard from "@/components/card/gameCard";
 import { UserContext } from "@/components/context/userContext";
 import { useContext } from "react";
 
-const page = () => {
+const Library = () => {
   const { library } = useContext(UserContext);
   return (
     <div className="section no-scrollbar">
@@ -13,7 +13,7 @@ const page = () => {
       ) : (
         <div className="flex gap-5 flex-wrap p-4">
           {library.map((item) => (
-            <GameCard game={item} />
+            <GameCard game={item} key={item._id} />
           ))}
         </div>
       )}
@@ -21,4 +21,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Library;

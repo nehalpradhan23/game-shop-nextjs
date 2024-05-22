@@ -6,7 +6,7 @@ import { filterListData } from "@/data/filterListData";
 import { gamesData } from "@/data/gamesData";
 import { useContext, useEffect, useState } from "react";
 
-const page = () => {
+const Categories = () => {
   // const [games, setGames] = useState(gamesData); // filtered games
   const [filters, setFilters] = useState(filterListData);
   const { games } = useContext(UserContext);
@@ -75,4 +75,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Categories;

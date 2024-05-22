@@ -31,7 +31,7 @@ const SideMenu = () => {
 
   useEffect(() => {
     router.push("/");
-  }, []);
+  }, [router]);
   // ========================================================
   return (
     <div className="flex flex-col w-[15%] h-full p-2 md:p-5  max-md:items-center rounded-2xl shadow-sh">

@@ -11,7 +11,7 @@ const DarkModeToggle = () => {
   useEffect(() => {
     setTheme("dark");
     setCurrentTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   const changeTheme = () => {
     if (currentTheme === "dark") {
