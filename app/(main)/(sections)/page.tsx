@@ -11,7 +11,7 @@ export default function Page() {
     <div className="section no-scrollbar">
       <HomeCarousel />
       <div className="px-4">
-        <p className="text-3xl font-bold mt-6">Explore</p>
+        <p className="text-3xl font-bold my-6">Explore</p>
 
         <div className="flex justify-between flex-wrap">
           {games.slice(0, 4).map((item) => (

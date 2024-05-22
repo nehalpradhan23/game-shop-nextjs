@@ -1,6 +1,6 @@
-import { Heart, ShoppingBag } from "lucide-react";
 import React from "react";
 import { HeaderTitle } from "./headerTitle";
+import HeaderIcons from "./headerIcons";
 
 const Header = () => {
   return (
@@ -8,14 +8,7 @@ const Header = () => {
       <div className="">
         <HeaderTitle />
       </div>
-      <div className="flex gap-3">
-        <div className="shadow-sh p-2 md:p-3 rounded-md">
-          <Heart />
-        </div>
-        <div className="shadow-sh p-2 md:p-3 rounded-md">
-          <ShoppingBag />
-        </div>
-      </div>
+      <HeaderIcons />
     </div>
   );
 };

@@ -20,7 +20,7 @@ const FilterAndSearch = ({
             key={item._id}
             className={cn(
               "px-3 py-2 rounded-md hover:bg-purple-700 cursor-pointer",
-              item.active ? "bg-purple-700" : ""
+              item.active ? "bg-purple-700 text-white" : "hover:text-white"
             )}
             onClick={() => onFilterClick(item.name)}
           >
@@ -29,8 +29,8 @@ const FilterAndSearch = ({
         ))}
       </div>
       {/* search ============= */}
-      <div className="inline-flex w-[300px] h-[50px] items-center gap-2 shadow-sh rounded-md text-white px-2 hover:bg-gray-950">
-        <Search />
+      <div className="inline-flex w-[300px] h-[50px] items-center gap-2 shadow-sh rounded-md text-white px-2 hover:bg-gray-100 dark:hover:bg-gray-950 dark:bg-slate-900">
+        <Search className="text-black dark:text-white" />
         <input
           type="text"
           className="bg-transparent outline-none border-none"

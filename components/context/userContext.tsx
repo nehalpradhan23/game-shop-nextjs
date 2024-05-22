@@ -21,6 +21,7 @@ export const ContextProvider = ({
   const [games, setGames] = useState(gamesData);
   const [library, setLibrary] = useState<gameProps[]>([]);
   const [bag, setBag] = useState<gameProps[]>([]);
+  // const [bag, setBag] = useState<gameProps[]>(gamesData);
   // =========================================
   return (
     <UserContext.Provider

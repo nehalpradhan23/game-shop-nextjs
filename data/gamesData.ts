@@ -16,7 +16,7 @@ export const gamesData: gameProps[] = [
     _id: 1,
     title: "League of Legends",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio non nobis, molestiae eum quod qui",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio non nobis, molestiae eum quod qui rem ipsum dolor sit amet consectetur adipisicing elit. Odio non nobis, molestiae eum quod qui",
     level: "Median",
     category: "MOBA",
     rating: 3,

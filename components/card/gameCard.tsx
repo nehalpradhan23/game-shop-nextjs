@@ -6,7 +6,7 @@ import GameCardButtons from "./gameCardButtons";
 
 const GameCard = ({ game }: { game: gameProps }) => {
   return (
-    <div className="w-[250px] h-[200px] bg-slate-950 flex rounded-lg flex-col shadow-sh overflow-hidden relative mt-5">
+    <div className="w-[250px] h-[200px] bg-slate-950 flex rounded-lg flex-col shadow-sh overflow-hidden relative">
       <div className="h-[80%] overflow-hidden">
         <Image
           className="object-cover h-full"
