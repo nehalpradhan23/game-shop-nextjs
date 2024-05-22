@@ -30,7 +30,7 @@ const SideMenu = () => {
   };
 
   useEffect(() => {
-    // router.push("/library");
+    router.push("/");
   }, []);
   // ========================================================
   return (

@@ -12,6 +12,7 @@ const page = () => {
   const { games } = useContext(UserContext);
   const [data, setData] = useState(games);
 
+  // ===============================================
   const handleFilterGames = (category: string) => {
     // set active on filter ===================
     setFilters(
@@ -32,6 +33,17 @@ const page = () => {
     setData(gamesData.filter((game) => game.category === category));
   };
 
+  // ===============================================
+  const handleSearch = (data: string) => {
+    // console.log(data, "search data");
+    setData(
+      games.filter((game) =>
+        game.title.toLowerCase().includes(data.toLowerCase())
+      )
+    );
+  };
+  // ===============================================
+
   useEffect(() => {
     setFilters(
       filters.map((filter) => {
@@ -48,7 +60,11 @@ const page = () => {
   return (
     <div className="section no-scrollbar">
       {/* filter and search ==================== */}
-      <FilterAndSearch data={filters} onFilterClick={handleFilterGames} />
+      <FilterAndSearch
+        data={filters}
+        onFilterClick={handleFilterGames}
+        onSearch={handleSearch}
+      />
       {/* show filtered data ============ */}
       <div className="flex gap-5 flex-wrap p-4">
         {data.map((item) => (

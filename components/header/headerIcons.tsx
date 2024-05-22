@@ -10,7 +10,7 @@ const HeaderIcons = () => {
       <div className="shadow-sh p-2 md:p-3 rounded-md relative">
         <Heart />
         {library.length > 0 && (
-          <span className="absolute -bottom-1 -right-1 rounded-full bg-purple-700 px-[6px] py-[2px] text-xs">
+          <span className="absolute -bottom-1 -right-1 rounded-full bg-purple-700 px-[6px] py-[2px] text-xs text-white">
             {library.length}
           </span>
         )}
@@ -18,7 +18,7 @@ const HeaderIcons = () => {
       <div className="shadow-sh p-2 md:p-3 rounded-md relative">
         <ShoppingBag />
         {bag.length > 0 && (
-          <span className="absolute -bottom-1 -right-1 rounded-full bg-purple-700 px-[6px] py-[2px] text-xs">
+          <span className="absolute -bottom-1 -right-1 rounded-full bg-purple-700 px-[6px] py-[2px] text-xs text-white">
             {bag.length}
           </span>
         )}

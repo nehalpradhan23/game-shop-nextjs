@@ -2,15 +2,34 @@
 import { filterDataProps } from "@/data/filterListData";
 import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 
 const FilterAndSearch = ({
   data,
   onFilterClick,
+  onSearch,
 }: {
   data: filterDataProps[];
   onFilterClick: (item: string) => void;
+  onSearch: (item: string) => void;
 }) => {
+  const [searchText, setSearchText] = useState<string>("");
+
+  // let timer: ReturnType<typeof setTimeout>;
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    // onSearch(searchText);
+    onSearch(e.target.value);
+    setSearchText(e.target.value);
+    // clearTimeout(timer);
+    // // console.log(searchText);
+    // timer = setTimeout(() => {
+    //   onSearch(searchText);
+    // }, 1500);
+    // console.log(timer);
+    // console.log(searchText);
+    // console.log(e.target.value);
+  };
+  // ==================================
   return (
     <div className="flex items-center flex-wrap p-3 justify-between gap-5">
       {/* filter items */}
@@ -33,8 +52,10 @@ const FilterAndSearch = ({
         <Search className="text-black dark:text-white" />
         <input
           type="text"
-          className="bg-transparent outline-none border-none"
+          className="bg-transparent outline-none border-none text-black dark:text-white"
           placeholder="Search"
+          value={searchText}
+          onChange={handleSearch}
         />
       </div>
     </div>
