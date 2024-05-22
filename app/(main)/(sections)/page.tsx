@@ -13,7 +13,7 @@ export default function Page() {
       <div className="px-4">
         <p className="text-3xl font-bold my-6">Explore</p>
 
-        <div className="flex justify-between flex-wrap">
+        <div className="flex justify-between flex-wrap gap-5 max-md:items-center max-md:justify-center">
           {games.slice(0, 4).map((item) => (
             <GameCard game={item} key={item._id} />
           ))}

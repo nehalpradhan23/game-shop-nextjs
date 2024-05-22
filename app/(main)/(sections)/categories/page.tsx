@@ -66,7 +66,8 @@ const Categories = () => {
         onSearch={handleSearch}
       />
       {/* show filtered data ============ */}
-      <div className="flex gap-5 flex-wrap p-4">
+      {/* <div className="flex gap-5 flex-wrap p-4"> */}
+      <div className="flex justify-between flex-wrap gap-5 max-md:items-center max-md:justify-center p-4">
         {data.map((item) => (
           <GameCard game={item} key={item._id} />
         ))}

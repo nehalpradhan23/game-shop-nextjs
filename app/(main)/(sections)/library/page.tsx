@@ -11,7 +11,7 @@ const Library = () => {
       {library.length === 0 ? (
         <h2 className="text-3xl p-5">Library is empty!</h2>
       ) : (
-        <div className="flex gap-5 flex-wrap p-4">
+        <div className="flex gap-5 flex-wrap p-4 max-lg:justify-center">
           {library.map((item) => (
             <GameCard game={item} key={item._id} />
           ))}
